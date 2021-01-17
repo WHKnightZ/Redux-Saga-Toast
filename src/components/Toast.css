@@ -1,0 +1,58 @@
+.toast-container {
+  box-sizing: border-box;
+  position: fixed;
+  top: 18px;
+  right: 24px;
+}
+
+.toast {
+  width: 300px;
+  margin-bottom: 15px;
+  box-shadow: 0px 4px 6px 0 rgba(0, 0, 0, 0.18);
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.toast-fade-in {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.toast-fade-out {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.close:hover {
+  opacity: 0.7;
+}
+
+.close:before,
+.close:after {
+  position: absolute;
+  content: ' ';
+  height: 12px;
+  width: 3px;
+  background-color: #777;
+}
+
+.close:before {
+  transform: rotate(45deg);
+}
+
+.close:after {
+  transform: rotate(-45deg);
+}
