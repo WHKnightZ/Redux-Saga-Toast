@@ -15,37 +15,30 @@ const config = {
 
 export default config;
 
-const createHeader = (token) => {
-  if (!token)
-    return {
-      headers: {
-        'content-type': 'application/json',
-      },
-    };
+const createHeaders = (token) => {
+  let headers = { 'content-type': 'application/json' };
+  if (token) headers = { ...headers, Authorization: token };
   return {
-    headers: {
-      'content-type': 'application/json',
-      Authorization: token,
-    },
+    headers: headers,
   };
 };
 
 export const get = (api, token) => {
-  const header = createHeader(token);
-  return axios.get(api, header);
+  const headers = createHeaders(token);
+  return axios.get(api, headers);
 };
 
 export const post = (api, data, token) => {
-  const header = createHeader(token);
-  return axios.post(api, data, header);
+  const headers = createHeaders(token);
+  return axios.post(api, data, headers);
 };
 
 export const put = (api, data, token) => {
-  const header = createHeader(token);
-  return axios.put(api, data, header);
+  const headers = createHeaders(token);
+  return axios.put(api, data, headers);
 };
 
 export const del = (api, token) => {
-  const header = createHeader(token);
-  return axios.delete(api, header);
+  const headers = createHeaders(token);
+  return axios.delete(api, headers);
 };
