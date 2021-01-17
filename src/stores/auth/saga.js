@@ -1,7 +1,7 @@
 import { takeLatest, put } from 'redux-saga/effects';
 import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from './actions';
-import { createToastError } from '../../utils';
-import config, { post } from '../../config';
+import { createToastError, post } from '../../utils';
+import config from '../../config';
 
 function* workerLogin(action) {
   try {

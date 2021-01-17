@@ -1,13 +1,13 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { authReducer } from './stores/auth/reducer';
-import { toastReducer } from './stores/toast/reducer';
+import { toastsReducer } from './stores/toasts/reducer';
 import { watcherLogin } from './stores/auth/saga';
 import { all } from 'redux-saga/effects';
 
 const rootReducer = combineReducers({
   auth: authReducer,
-  toast: toastReducer,
+  toasts: toastsReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();

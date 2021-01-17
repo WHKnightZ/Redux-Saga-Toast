@@ -3,11 +3,11 @@ import { removeToast } from '../utils';
 import './Toast.css';
 import Toast from './Toast';
 
-const ToastContainer = () => {
-  const toasts = useSelector((state) => state.toast);
+const Toaster = () => {
+  const toasts = useSelector((state) => state.toasts);
 
   return (
-    <div className="toast-container">
+    <div className="toaster">
       {toasts.map((toast) => (
         <Toast
           key={toast.key}
@@ -21,4 +21,4 @@ const ToastContainer = () => {
   );
 };
 
-export default ToastContainer;
+export default Toaster;

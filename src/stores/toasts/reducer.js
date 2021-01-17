@@ -5,7 +5,7 @@ const initialState = [];
 
 let toastKey = 0;
 
-export const toastReducer = (state = initialState, action) => {
+export const toastsReducer = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_TOAST:
       toastKey += 1;
